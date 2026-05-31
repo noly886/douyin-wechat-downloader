@@ -1,2 +1,48 @@
-# douyin-wechat-downloader
-  ```text   electron, downloader, douyin, wechat-channels, video-downloader, desktop-app
+  # 短视频链接下载器
+
+  一个基于 Electron 开发的本地桌面工具，用于捕获并下载用户有权限访问、可正常播放的短视频资源。项目内置浏览器窗口，可打开
+  抖音、微信视频号等页面，在视频播放时自动识别视频流，并将捕获到的视频保存到本地目录。
+
+  ## 功能特点
+
+  - 支持粘贴抖音、微信视频号页面链接或分享文本。
+  - 内置视频捕获窗口，支持登录后访问可播放内容。
+  - 自动识别页面中的视频流资源。
+  - 支持选择本地保存目录。
+  - 显示下载进度、任务状态和运行日志。
+  - 默认保存到系统下载目录下的 `ShortVideoDownloads` 文件夹。
+  - 支持打包为 Windows 便携版 EXE。
+
+  ## 技术栈
+
+  - Electron
+  - JavaScript
+  - Node.js
+  - electron-builder
+
+  ## 使用方式
+
+  ```bash
+  npm install
+  npm start
+
+  ## 构建 Windows 版本
+
+  npm run build:win
+
+  构建后的文件会输出到：
+
+  release/
+
+  ## 使用说明
+
+  1. 粘贴短视频页面链接，或粘贴包含链接的分享文本。
+  2. 点击打开内置捕获窗口。
+  3. 在捕获窗口中登录并播放目标视频。
+  4. 主窗口捕获到视频流后，点击使用捕获视频。
+  5. 选择保存目录并开始下载。
+
+  ## 注意事项
+
+  本工具仅用于下载用户有权访问且可正常播放的视频内容，不支持绕过登录、付费、DRM、私密内容、平台风控或签名保护。
+

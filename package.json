@@ -1,0 +1,45 @@
+{
+  "name": "douyin-wechat-downloader",
+  "version": "1.0.0",
+  "description": "Electron desktop downloader that captures playable short video streams.",
+  "main": "src/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "lint": "node --check src/main.js && node --check src/preload.js && node --check src/services/downloader.js && node --check src/renderer/app.js",
+    "build:win": "electron-builder --win portable --x64"
+  },
+  "keywords": [
+    "electron",
+    "downloader",
+    "douyin",
+    "capture"
+  ],
+  "author": "",
+  "license": "MIT",
+  "build": {
+    "appId": "com.local.short-video-downloader",
+    "productName": "短视频链接下载器",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "README.md",
+      "package.json"
+    ],
+    "win": {
+      "icon": "src/assets/app-icon.ico",
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "${productName}-Portable-${version}-${arch}.${ext}"
+    }
+  },
+  "devDependencies": {
+    "electron": "^41.2.0",
+    "electron-builder": "^26.8.1"
+  }
+}
